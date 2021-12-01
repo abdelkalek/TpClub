@@ -7,5 +7,4 @@ public interface IClassroomService {
      void deleteClassroom(Integer id);
      Classroom updateClassroom(Classroom cl, int classroomId);
      Classroom retrieveClassroom(Integer id);
-
 }

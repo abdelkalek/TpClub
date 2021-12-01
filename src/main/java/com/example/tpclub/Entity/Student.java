@@ -24,7 +24,6 @@ public class Student {
     private String nsc ;
     @Column(name = "emil")
     private String email ;
-
     public Student(String nsc, String email) {
         this.nsc = nsc;
         this.email = email;
@@ -34,6 +33,16 @@ public class Student {
     private Classroom classroom;
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Club> clubs;
+    public Student(String nsc, String email, Classroom classroom, List<Club> clubs) {
+        this.nsc = nsc;
+        this.email = email;
+        this.classroom = classroom;
+        this.clubs = clubs;
+    }
 
-
+    public Student(String nsc, String email, List<Club> clubs) {
+        this.nsc = nsc;
+        this.email = email;
+        this.clubs = clubs;
+    }
 }

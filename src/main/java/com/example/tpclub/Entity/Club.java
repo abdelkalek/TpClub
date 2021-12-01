@@ -19,5 +19,14 @@ public class Club {
     private String creation_date;
     @ManyToMany(fetch = FetchType.LAZY)
     @JsonIgnoreProperties("clubs")
-    private List<Student> Students;
+    private List<Student> students;
+    public Club(String ref, String creation_date) {
+        this.ref = ref;
+        this.creation_date = creation_date;
+    }
+    public Club(String ref, String creation_date, List<Student> students) {
+        this.ref = ref;
+        this.creation_date = creation_date;
+        students = students;
+    }
 }

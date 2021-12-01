@@ -21,4 +21,12 @@ public class Classroom {
     private String name ;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Student> classuser;
+
+    public Classroom(String name) {
+        this.name = name;
+    }
+    public Classroom(String name, List<Student> classuser) {
+        this.name = name;
+        this.classuser = classuser;
+    }
 }

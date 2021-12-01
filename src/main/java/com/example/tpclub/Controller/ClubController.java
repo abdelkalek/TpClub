@@ -35,7 +35,21 @@ public class ClubController {
     @GetMapping("/retrieve/{Club-id}")
     @ResponseBody
     public Club retrieveStudent(@PathVariable("Club-id") Integer id) {
+
         return clubService.retrieveClub(id);
     }
+    @GetMapping("/nbrclub")
+    private long nbrclub(){
+        return clubService.nbrClub();
+    }
+
+    @GetMapping("/maxStuperClub")
+    @ResponseBody
+    private  Iterable<Object[]> superclub(){
+        return clubService.superClub();
+    }
+    @GetMapping("/nbrStudent")
+    private long nbrStudent(){
+        return clubService.nbrStudents();   }
 }
 

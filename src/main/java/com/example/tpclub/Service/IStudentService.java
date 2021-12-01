@@ -10,4 +10,5 @@ public interface IStudentService {
      Student updateStudent(Student s, int studentId);
      Student retrieveStudent(Integer id);
      long countStudent();
+     long nbrParticipe();
 }

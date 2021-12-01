@@ -46,5 +46,11 @@ public class StudentController {
     private long countStudent(){
         return studentService.countStudent();
     }
+
+    @GetMapping("/nbrparticipe")
+    private long nbrparticipe(){
+        return studentService.nbrParticipe();
+    }
+
 }
 

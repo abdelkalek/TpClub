@@ -48,4 +48,9 @@ public class StudentService implements IStudentService {
     public long countStudent() {
         return sturep.count();
     }
+
+    @Override
+    public long nbrParticipe() {
+        return  sturep.countDistinctByClubsNotNull();
+    }
 }
