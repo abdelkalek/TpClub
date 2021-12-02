@@ -30,7 +30,6 @@ public class StudentService implements IStudentService {
         sturep.delete(student);
 
     }
-
     @Override
     public Student updateStudent(Student s, int studentId) {
         Student student = sturep.findById(studentId).orElse(null);

@@ -1,5 +1,4 @@
 package com.example.tpclub;
-
 import com.example.tpclub.Entity.Classroom;
 import com.example.tpclub.Entity.Club;
 import com.example.tpclub.Repository.IClassroomRepository;
@@ -42,8 +41,6 @@ public class TpClubApplication {
             clubrep.save(c);
             clubrep.save(c1);
             clubrep.save(c2);
-
-
             Classroom cl = new Classroom("GL");
             Classroom cl1 = new Classroom("Reseaux");
             Classroom cl2 = new Classroom("BIG Data");
@@ -59,12 +56,14 @@ public class TpClubApplication {
             Student u3 = new Student("Jack", "jacksparo@gmail.com");
             Student u4 = new Student("yani", "yani@gmail.com");
             List<Student> students = new ArrayList<>();
+            List<Student> studentb = new ArrayList<>();
             students.add(u);
             students.add(u1);
-            students.add(u2);
-            students.add(u3);
-            students.add(u4);
+            studentb.add(u2);
+            studentb.add(u3);
+            studentb.add(u4);
             sturepo.saveAll(students);
+            sturepo.saveAll(studentb);
             u.setClassroom(cl);
             u.setClubs(clubs2);
             sturepo.save(u);
@@ -80,9 +79,10 @@ public class TpClubApplication {
             u4.setClassroom(cl2);
             u4.setClubs(clubs2);
             sturepo.save(u4);
-            c.setStudents(students);
+            c.setStudents(studentb);
             c1.setStudents(students);
             c2.setStudents(students);
+
             clubrep.save(c);
             clubrep.save(c1);
             clubrep.save(c2);

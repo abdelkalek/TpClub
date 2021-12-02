@@ -28,7 +28,7 @@ public class ClassroomService implements IClassroomService {
     @Override
     public void deleteClassroom(Integer id) {
          Classroom classroom = classRep.findById(id).orElse(null);
-        classRep.delete(classroom);
+         classRep.delete(classroom);
     }
 
     @Override

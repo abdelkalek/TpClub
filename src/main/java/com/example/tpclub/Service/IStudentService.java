@@ -1,9 +1,7 @@
 package com.example.tpclub.Service;
 import com.example.tpclub.Entity.Student;
 import java.util.List;
-
 public interface IStudentService {
-
      List<Student> retrieveAllStudents();
      int ajouterStudent(Student s);
      void deleteStudent(Integer id);

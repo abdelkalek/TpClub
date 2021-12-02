@@ -1,5 +1,7 @@
 package com.example.tpclub.Service;
 import com.example.tpclub.Entity.Club;
+import com.example.tpclub.Entity.Student;
+
 import java.util.List;
 
 public interface IClubService {
@@ -9,6 +11,9 @@ public interface IClubService {
     Club updateClub(Club c, int clubId);
     Club retrieveClub(Integer id);
     long nbrClub();
-    Iterable<Object[]> superClub();
-    long nbrStudents();
+    Iterable<String> superClub();
+    Iterable<Club>  bestClub();
+    Iterable<Club>  worstClub();
+    Iterable<Student> bestStudent();
+    Iterable<Club> findStudent(Student s);
 }

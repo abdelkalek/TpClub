@@ -11,7 +11,6 @@ import java.util.List;
 public class ClubService implements IClubService {
     @Autowired
     IClubRepository clubrepo;
-    private Student Student;
 
     @Override
     public List<Club> retrieveAllClubs() {
@@ -45,14 +44,28 @@ public class ClubService implements IClubService {
     public long nbrClub() {
         return clubrepo.count();
     }
-
     @Override
-    public  Iterable<Object[]> superClub() {
-        return  clubrepo.studentsPerClub();
+    public    Iterable<String> superClub() {
+        return  clubrepo.studentINClub();
+    }
+    @Override
+    public Iterable<Club>  bestClub() {
+        return clubrepo.bestClub();
     }
 
     @Override
-    public long nbrStudents() {
-        return clubrepo.nbrStudents();
+    public Iterable<Club> worstClub() {
+        return clubrepo.worstClub();
     }
+
+    @Override
+    public Iterable<Student> bestStudent() {
+        return clubrepo.bestStudent();
+    }
+
+    @Override
+    public Iterable<Club> findStudent(Student s) {
+        return clubrepo.listclubstudent(s);
+    }
+
 }
